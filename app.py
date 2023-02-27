@@ -4,7 +4,7 @@ from flask_socketio import SocketIO
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
     image = url_for('static', filename='drjohn.jpg')
     return render_template('index.html', imag=image)
