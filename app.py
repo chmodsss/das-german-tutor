@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
+
 socketio = SocketIO(app)
 
 @app.route('/', methods=['GET','POST'])
