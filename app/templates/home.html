@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <h3>Das German Tutor</h3>
+
+      <hr>
+
+      <form action="/" , method="POST">
+        <div class="form-group">
+          <label>Chat with the tutor</label>
+          <input class="form-control" , type="text" , name="message" , placeholder="Your message here...">
+        </div>
+        <button type="submit" class="btn btn-primary"> Send </button>
+      </form>
+
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+<div class="container" style="overflow-y:auto; max-height: 300px;">
+  <div class="row">
+    <div class="col">
+
+      {% for msg in message %}
+      <ul>{{ msg }}</ul>
+      {% endfor %}
+    </div>
+
+    {% endblock %}
